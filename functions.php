@@ -18,6 +18,12 @@ function getItems() {
         return false; // Return false if the query fails
     }
 
-    return $result; // Return the query result (should be a MySQLi result object)
+    // Fetch the data into an associative array
+    $items = [];
+    while ($row = $result->fetch_assoc()) {
+        $items[] = $row; // Add each row (item) to the $items array
+    }
+
+    return $items; // Return the array of items fetched from the database
 }
 ?>
