@@ -27,10 +27,4 @@ function getCartItems() {
         return $_SESSION['cart']; // Return cart items from session
     }
 }
-
-// Function to get item details based on item ID (You need to implement this function)
-function getItemDetails($itemID) {
-    // Implement logic to fetch item details from the database based on $itemID
-    // Replace this comment with your code to fetch item details
-}
 ?>
