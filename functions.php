@@ -1,4 +1,6 @@
 <?php
+include('util-db.php'); // Include or require util-db.php where get_db_connection() is defined
+
 // Function to get items from the database
 function getItems() {
     $conn = get_db_connection(); // Get the database connection
