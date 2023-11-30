@@ -26,7 +26,7 @@
           <a class="nav-link" href="quote.php">Quote</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="Choice.php">Choice</a>
+          <a class="nav-link" href="choice.php">Choice</a>
         </li>
       </ul>
     </div>
