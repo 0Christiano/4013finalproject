@@ -44,6 +44,25 @@ if (!function_exists('addToCart')) {
     }
 }
 
+if (!function_exists('removeFromCart')) {
+    function removeFromCart($itemId) {
+        if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+            return; // Nothing to remove if the cart is empty
+        }
+
+        // Find the index of the item in the cart
+        $index = array_search($itemId, $_SESSION['cart']);
+
+        if ($index !== false) {
+            // Remove the item from the cart array
+            unset($_SESSION['cart'][$index]);
+
+            // Reset array keys to avoid gaps
+            $_SESSION['cart'] = array_values($_SESSION['cart']);
+        }
+    }
+}
+
 // Function to get item details based on item ID
 if (!function_exists('getItemDetails')) {
     function getItemDetails($itemID) {
