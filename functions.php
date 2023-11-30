@@ -20,4 +20,17 @@ function getItems() {
 
     return $result; // Return the query result (should be a MySQLi result object)
 }
+function getCartItems() {
+    if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+        return []; // Return an empty array if cart is empty or not set
+    } else {
+        return $_SESSION['cart']; // Return cart items from session
+    }
+}
+
+// Function to get item details based on item ID (You need to implement this function)
+function getItemDetails($itemID) {
+    // Implement logic to fetch item details from the database based on $itemID
+    // Replace this comment with your code to fetch item details
+}
 ?>
