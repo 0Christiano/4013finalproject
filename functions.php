@@ -38,6 +38,6 @@ function addToCart($itemId) {
     // Example: adding $itemId to the $_SESSION['cart'] array
     $_SESSION['cart'][] = $itemId;
 }
-?>
+
 
 ?>
