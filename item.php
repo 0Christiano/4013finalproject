@@ -2,7 +2,8 @@
 session_start();
 include('functions.php');
 
-if (isset($_GET['item_id'])) {
+// Check if item_id is present in the URL
+if (isset($_GET['item_id']) && !empty($_GET['item_id'])) {
     $itemId = $_GET['item_id'];
 
     // Retrieve item details from the database based on $itemId
@@ -17,18 +18,7 @@ if (isset($_GET['item_id'])) {
         exit();
     }
 } else {
-    echo "Item ID not provided.";
+    echo "Item ID not provided or invalid.";
     exit();
 }
 ?>
-
-<!-- Display item details -->
-<h1><?php echo $item['item_name']; ?></h1>
-<p>Price: <?php echo $item['other_details']; ?></p>
-<!-- Display other details as needed -->
-
-<!-- Add to Cart button -->
-<form action="add_to_cart.php" method="GET">
-    <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
-    <input type="submit" value="Add to Cart">
-</form>
