@@ -6,17 +6,36 @@ include('util-db.php'); // Include the file containing get_db_connection() funct
 function getItems() {
     $conn = get_db_connection(); // Get the database connection
     
-    // Your existing getItems() function logic...
+    if ($conn === false) {
+        return false; // Return false if the connection fails
+    }
+
+    // Your SQL query to retrieve items (adjust column names as needed)
+    $sql = "SELECT item_ID, name, description FROM Item";
+
+    $result = $conn->query($sql); // Execute the query
+
+    if (!$result) {
+        return false; // Return false if the query fails
+    }
+
+    return $result; // Return the query result (should be a MySQLi result object)
 }
 
 // Function to get cart items
 function getCartItems() {
-    // Your existing getCartItems() function logic...
+    if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+        return []; // Return an empty array if cart is empty or not set
+    } else {
+        return $_SESSION['cart']; // Return cart items from session
+    }
 }
 
 // Function to add an item to the cart
 function addToCart($itemId) {
-    // Your existing addToCart() function logic...
+    // Your logic to add the item to the cart (using session or database)
+    // Example: adding $itemId to the $_SESSION['cart'] array
+    $_SESSION['cart'][] = $itemId;
 }
 
 // Function to get item details based on item ID
