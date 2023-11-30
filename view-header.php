@@ -18,18 +18,11 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="item.php">Item</a>
+      
                   </li>
         <li class="nav-item">
           <a class="nav-link" href="cart.php">Cart</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="quote.php">Quote</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="choice.php">Choice</a>
+      
         </li>
       </ul>
     </div>
