@@ -38,7 +38,7 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
     $itemId = $_POST['item_id'];
     removeFromCart($itemId); // You need to create this function in functions.php
-
   
 }
+      echo "<p><a href='index.php'>Back to Home</a></p>";
 ?>
