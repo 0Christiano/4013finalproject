@@ -1,6 +1,6 @@
 <?php
 // db connection
-include('db_connection.php');
+include('util-db.php');
 
 // gets items from db
 function getItems() {
