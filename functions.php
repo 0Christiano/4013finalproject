@@ -28,11 +28,6 @@ function getCartItems() {
     }
 }
 
-// Inside functions.php
-<?php
-// Other functions and database connection code...
-
-// Function to add an item to the cart
 function addToCart($itemId) {
     // Your logic to add the item to the cart (using session or database)
     // Example: adding $itemId to the $_SESSION['cart'] array
