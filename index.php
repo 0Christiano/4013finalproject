@@ -1,8 +1,7 @@
 <?php
 $pageTitle = "Home";
 include "view-header.php"; // Include your header section
-
-include('functions.php');
+include 'functions.php'; // Include functions file
 
 // Get items from the database
 $items = getItems();
@@ -12,11 +11,12 @@ if ($items !== false && $items->num_rows > 0) {
 
     while ($row = $items->fetch_assoc()) {
         // Check if the keys exist in the fetched row before accessing them
-        if (isset($row['name']) && isset($row['description']) && isset($row['item_id'])) {
+        if (isset($row['name'], $row['description'], $row['item_ID'])) {
             echo "<p>{$row['name']} - {$row['description']} 
-            <a href='add_to_cart.php?item_id={$row['item_id']}'>Add to Cart</a></p>";
+            <a href='add_to_cart.php?item_id={$row['item_ID']}'>Add to Cart</a></p>";
         } else {
-            echo "Invalid data fetched from the database.";
+            echo "<p>Invalid data fetched from the database.</p>";
+            var_dump($row); // Output the fetched row for debugging purposes
         }
     }
 } else {
