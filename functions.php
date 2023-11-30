@@ -1,5 +1,5 @@
 <?php
-include('util-db.php'); // Include the file containing get_db_connection() function
+include('uil-db.php'); // Include the file containing get_db_connection() function
 
 // Function to get items from the database
 function getItems() {
