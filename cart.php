@@ -23,9 +23,24 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
             echo "<p>Item Name: " . $itemDetails['name'] . "</p>";
             echo "<p>Item Description: " . $itemDetails['description'] . "</p>";
             echo "<hr>";
+
+             echo "<form method='post' action='cart.php'>";
+            echo "<input type='hidden' name='item_id' value='$itemID'>";
+            echo "<input type='submit' name='remove_item' value='Remove'>";
+            echo "</form>";
+
+            echo "<hr>";
         }
     } else {
         echo "<p>Your cart is empty.</p>";
     }
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
+    $itemId = $_POST['item_id'];
+    removeFromCart($itemId); // You need to create this function in functions.php
+
+    // Redirect back to cart.php to refresh the displayed cart
+    header('Location: cart.php');
+    exit();
 }
 ?>
