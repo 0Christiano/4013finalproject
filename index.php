@@ -1,28 +1,16 @@
 <?php
-// This ensures there's no output sent to the browser before session_start()
-ob_start();
-
-// Starting output buffering before session_start()
-session_start();
 $pageTitle = "Home";
 include "view-header.php";
-
-// Rest of your code remains the same
 include('functions.php');
 
 // Get items from the database
 $items = getItems();
-?>
 
-<!-- Display items -->
-<h1>Items</h1>
-<?php
-while ($row = $items->fetch_assoc()) {
-    echo "<p>{$row['item_name']} - {$row['other_details']} 
-    <a href='add_to_cart.php?item_id={$row['item_id']}'>Add to Cart</a></p>";
-}
-?>
+if ($items !== false && $items->num_rows > 0) {
+    echo "<h1>Items</h1>";
 
-<?php
-include "view-footer.php";
-?>
+    while ($row = $items->fetch_assoc()) {
+        // Check if the keys exist in the fetched row before accessing them
+        if (isset($row['name']) && isset($row['description']) && isset($row['item_id'])) {
+            echo "<p>{$row['name']} - {$row['description']} 
+            <a href='add_to_cart.php?item_id={$row['item_i
