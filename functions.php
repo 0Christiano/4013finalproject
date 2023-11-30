@@ -1,5 +1,5 @@
 <?php
-include('util-db.php'); // Include or require util-db.php where get_db_connection() is defined
+// Include your database connection or utility file here
 
 // Function to get items from the database
 function getItems() {
@@ -9,7 +9,9 @@ function getItems() {
         return false; // Return false if the connection fails
     }
 
-    $sql = "SELECT * FROM Item"; // Your SQL query to retrieve items
+    // Your SQL query to retrieve items (adjust column names as needed)
+    $sql = "SELECT item_ID, name, description FROM Item";
+
     $result = $conn->query($sql); // Execute the query
 
     if (!$result) {
