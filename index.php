@@ -1,7 +1,13 @@
 <?php
+// This ensures there's no output sent to the browser before session_start()
+ob_start();
+
+// Starting output buffering before session_start()
+session_start();
 $pageTitle = "Home";
 include "view-header.php";
-session_start();
+
+// Rest of your code remains the same
 include('functions.php');
 
 // Get items from the database
