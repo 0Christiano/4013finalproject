@@ -1,12 +1,4 @@
 <?php
-include('util-db.php'); // Include the file containing your database connection function
-
-// Function to get database connection
-function get_db_connection(){
-    $conn = get_db_connection(); // Replace this with your actual function to establish a database connection
-    return $conn;
-}
-
 // Function to get items from the database
 function getItems() {
     $conn = get_db_connection(); // Get the database connection
