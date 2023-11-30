@@ -39,8 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
     $itemId = $_POST['item_id'];
     removeFromCart($itemId); // You need to create this function in functions.php
 
-    // Redirect back to cart.php to refresh the displayed cart
-    header('Location: cart.php');
-    exit();
+  
 }
 ?>
