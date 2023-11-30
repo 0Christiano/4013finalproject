@@ -1,5 +1,8 @@
 <?php
+
+
 session_start();
+include('functions.php');
 
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     echo "<p>Your cart is empty.</p>";
