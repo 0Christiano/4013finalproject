@@ -1,8 +1,3 @@
-<form action="checkout.php" method="post">
-    <input type="text" name="customer_info" placeholder="Enter your information...">
-    <input type="submit" name="checkout" value="Checkout">
-</form>
-
 <?php
 
 session_start();
