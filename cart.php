@@ -36,9 +36,6 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     } else {
         echo "<p>Your cart is empty.</p>";
     }
-    } else {
-        echo "<p>Your cart is empty.</p>";
-    }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
     $itemId = $_POST['item_id'];
