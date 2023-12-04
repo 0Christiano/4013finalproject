@@ -63,7 +63,7 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 
             echo "<hr>";
         }
-        
+        echo "<form method='post' action='checkout.php'>";
         echo "<input type='submit' name='proceed_to_checkout' value='Proceed to Checkout'>";
         echo "</form>";
 
