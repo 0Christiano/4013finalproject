@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
         clearCart();
 
         // Redirect or display a success message
-        header('Location: success.php');
+        header('Location: index.php');
         exit();
     } else {
         echo "<p>Failed to save user information into the statement table.</p>";
