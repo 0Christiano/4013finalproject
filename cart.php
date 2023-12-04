@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 include('functions.php');
 
@@ -42,3 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
 }
       echo "<p><a href='index.php'>Back to Home</a></p>";
 ?>
+
+
+<form action="checkout.php" method="post">
+    <input type="text" name="customer_info" placeholder="Enter your information...">
+    <input type="submit" name="checkout" value="Checkout">
+</form>
+
