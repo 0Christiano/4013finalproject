@@ -15,11 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Validate and sanitize user inputs
         // You should implement proper validation and sanitization here
 
-        // Concatenate user information into a single string
-        $statement = "Name: $name, Address: $address, Credit Card: $creditCard";
-
         // Insert user information into the "Quote" table
-        $quoteId = saveQuote($statement); // You'll need to create this function in functions.php
+        $quoteId = saveQuote($name, $address, $creditCard); // You'll need to create this function in functions.php
 
         if ($quoteId) {
             // Get cart items
