@@ -30,7 +30,16 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 
             echo "<hr>";
         }
-        echo "<form method='post' action='checkout.php'>"; // Replace 'checkout.php' with the actual checkout page
+        echo "<form method='post' action='checkout.php'>";
+        echo "<label for='name'>Name:</label>";
+        echo "<input type='text' name='name' required><br>";
+
+        echo "<label for='address'>Address:</label>";
+        echo "<input type='text' name='address' required><br>";
+
+        echo "<label for='credit_card'>Credit Card:</label>";
+        echo "<input type='text' name='credit_card' required><br>";
+
         echo "<input type='submit' name='proceed_to_checkout' value='Proceed to Checkout'>";
         echo "</form>";
     } else {
