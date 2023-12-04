@@ -1,13 +1,13 @@
 <?php
 session_start();
 include('functions.php');
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['remove_item'])) {
         $itemId = $_POST['item_id'];
         removeFromCart($itemId); // You need to create this function in functions.php
     } elseif (isset($_POST['proceed_to_checkout'])) {
         // Retrieve user information from the form
+        $id = $_POST['id']; // Assuming you have an 'id' field in your form
         $name = $_POST['name'];
         $address = $_POST['address'];
         $creditCard = $_POST['credit_card'];
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // You should implement proper validation and sanitization here
 
         // Insert user information into the "Quote" table
-        $quoteId = saveQuote($name, $address, $creditCard); // You'll need to create this function in functions.php
+        $quoteId = saveQuote($id, $name, $address, $creditCard); // You'll need to create this function in functions.php
 
         if ($quoteId) {
             // Get cart items
