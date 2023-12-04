@@ -26,5 +26,12 @@ function saveQuote($id, $name, $address, $creditCard) {
     }
 }
 
+function getCartItems() {
+    if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+        return []; // Return an empty array if cart is empty or not set
+    } else {
+        return $_SESSION['cart']; // Return cart items from session
+    }
+}
 // Other functions related to the Quote table...
 ?>
