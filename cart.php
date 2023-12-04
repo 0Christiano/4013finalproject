@@ -63,6 +63,10 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 
             echo "<hr>";
         }
+        
+        echo "<input type='submit' name='proceed_to_checkout' value='Proceed to Checkout'>";
+        echo "</form>";
+
     } else {
         echo "<p>Your cart is empty.</p>";
     }
