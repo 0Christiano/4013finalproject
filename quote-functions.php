@@ -43,6 +43,12 @@ function saveQuoteItem($quoteId, $itemId) {
     return $conn->query($sql); // Return the result of the query (true or false)
 }
 
+function clearCart() {
+    if (isset($_SESSION['cart'])) {
+        unset($_SESSION['cart']); // Unset or clear the cart session variable
+    }
+}
+
 function getCartItems() {
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         return []; // Return an empty array if cart is empty or not set
