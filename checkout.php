@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include('functions.php');
+include('quotefunctions.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle form submission
