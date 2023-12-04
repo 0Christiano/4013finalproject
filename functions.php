@@ -6,7 +6,7 @@ include_once('util-db.php'); // Include the file containing get_db_connection() 
 if (!function_exists('getItems')) {
     function getItems() {
         $conn = get_db_connection(); // Get the database connection
-        
+
         if ($conn === false) {
             return false; // Return false if the connection fails
         }
@@ -67,7 +67,7 @@ if (!function_exists('removeFromCart')) {
 if (!function_exists('getItemDetails')) {
     function getItemDetails($itemID) {
         $conn = get_db_connection(); // Get the database connection
-        
+
         if ($conn === false) {
             return false; // Return false if the connection fails
         }
@@ -84,6 +84,54 @@ if (!function_exists('getItemDetails')) {
         $itemDetails = $result->fetch_assoc(); // Fetch item details
 
         return $itemDetails; // Return the item details as an associative array
+    }
+}
+
+// Function to save quote information to the database
+if (!function_exists('saveQuote')) {
+    function saveQuote($id, $name, $address, $creditCard) {
+        $conn = get_db_connection(); // Get the database connection
+
+        if ($conn === false) {
+            return false; // Return false if the connection fails
+        }
+
+        // Sanitize inputs (you should perform proper validation and sanitation)
+        $id = mysqli_real_escape_string($conn, $id);
+        $name = mysqli_real_escape_string($conn, $name);
+        $address = mysqli_real_escape_string($conn, $address);
+        $creditCard = mysqli_real_escape_string($conn, $creditCard);
+
+        // Insert into the "Quote" table
+        $query = "INSERT INTO Quote (id, name, address, credit_card) VALUES ('$id', '$name', '$address', '$creditCard')";
+
+        if (mysqli_query($conn, $query)) {
+            // Return the ID of the inserted record
+            return mysqli_insert_id($conn);
+        } else {
+            // Return false if the insertion fails
+            return false;
+        }
+    }
+}
+
+// Function to save cart items associated with a quote
+if (!function_exists('saveCartQuote')) {
+    function saveCartQuote($quoteId, $cartItems) {
+        $conn = get_db_connection(); // Get the database connection
+
+        if ($conn === false) {
+            return false; // Return false if the connection fails
+        }
+
+        // Iterate through cart items and insert them into the "Cart_Quote" table
+        foreach ($cartItems as $itemID) {
+            $itemID = mysqli_real_escape_string($conn, $itemID);
+            $query = "INSERT INTO Cart_Quote (quote_ID, item_ID) VALUES ('$quoteId', '$itemID')";
+            mysqli_query($conn, $query);
+        }
+
+        return true; // Return true on success
     }
 }
 
