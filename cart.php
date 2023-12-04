@@ -64,6 +64,10 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
             echo "<hr>";
         }
         echo "<form method='post' action='checkout.php'>";
+       
+        echo "<label for='id'>Id:</label>";
+        echo "<input type='text' name='id' required><br>";
+
         echo "<label for='name'>Name:</label>";
         echo "<input type='text' name='name' required><br>";
 
