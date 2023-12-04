@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
     $customerInfo = "Name: $name, Address: $address, Credit Card: $creditCard";
 
     // Save user information to the Quote table
-    $quoteId = saveQuote($ID, $name, $address, $creditCard);
+    $quoteId = saveQuote($id, $name, $address, $creditCard);
 
     if ($quoteId) {
         // Get cart items
