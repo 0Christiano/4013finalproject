@@ -2,37 +2,41 @@
 session_start();
 include('functions.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_item'])) {
-    $itemId = $_POST['item_id'];
-    removeFromCart($itemId); // You need to create this function in functions.php
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['remove_item'])) {
+        $itemId = $_POST['item_id'];
+        removeFromCart($itemId); // You need to create this function in functions.php
+    } elseif (isset($_POST['proceed_to_checkout'])) {
+        // Retrieve user information from the form
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $creditCard = $_POST['credit_card'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['proceed_to_checkout'])) {
-    // Retrieve user information from the form
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $creditCard = $_POST['credit_card'];
+        // Validate and sanitize user inputs
+        // You should implement proper validation and sanitization here
 
-    // Validate and sanitize user inputs
-    // You should implement proper validation and sanitization here
+        // Concatenate user information into a single string
+        $statement = "Name: $name, Address: $address, Credit Card: $creditCard";
 
-    // Concatenate user information into a single string
-    $statement = "Name: $name, Address: $address, Credit Card: $creditCard";
+        // Insert user information into the "Quote" table
+        $quoteId = saveQuote($statement); // You'll need to create this function in functions.php
 
-    // Insert user information into the "Quote" table
-    saveQuote($statement); // You'll need to create this function in functions.php
+        if ($quoteId) {
+            // Get cart items
+            $cartItems = getCartItems(); // You'll need to create this function in functions.php
 
-    // Get cart items
-    $cartItems = getCartItems(); // You'll need to create this function in functions.php
+            // Insert cart items into the "Quote" table, associating them with the quote
+            saveCartQuote($quoteId, $cartItems); // You'll need to create this function in functions.php
 
-    // Insert cart items into the "Quote" table, associating them with the user
-    saveCartQuote($cartItems); // You'll need to create this function in functions.php
+            // Clear the cart after successful checkout
+            clearCart();
 
-    // Clear the cart after successful checkout
-    clearCart();
-
-    // Display a success message or redirect to a thank you page
-    echo "<p>Checkout successful! Thank you for your purchase.</p>";
+            // Display a success message or redirect to a thank you page
+            echo "<p>Checkout successful! Thank you for your purchase.</p>";
+        } else {
+            echo "<p>Failed to save user information into the statement table.</p>";
+        }
+    }
 }
 
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
