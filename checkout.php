@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
     // Validate and sanitize user inputs (add your validation/sanitization logic here)
 
     // Concatenate user information into a single string
-    $customerInfo = "ID": $id, "Name: $name, Address: $address, Credit Card: $creditCard";
+    $customerInfo = ID: $id, Name: $name, Address: $address, Credit Card: $creditCard";
 
     // Save user information to the Quote table
     $quoteId = saveQuote($id, $name, $address, $creditCard);
