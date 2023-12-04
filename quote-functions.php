@@ -25,6 +25,23 @@ function saveQuote($id, $name, $address, $creditCard) {
         return false; // Return false if the insertion fails
     }
 }
+function saveQuoteItem($quoteId, $itemId) {
+    $conn = get_db_connection(); // Get the database connection
+
+    if ($conn === false) {
+        return false; // Return false if the connection fails
+    }
+
+    // Escape the variables to prevent SQL injection
+    $safeQuoteId = mysqli_real_escape_string($conn, $quoteId);
+    $safeItemId = mysqli_real_escape_string($conn, $itemId);
+
+    // SQL query to insert cart items into the Quote_Item table
+    $sql = "INSERT INTO Quote_Item (quote_id, item_id) 
+            VALUES ('$safeQuoteId', '$safeItemId')";
+
+    return $conn->query($sql); // Return the result of the query (true or false)
+}
 
 function getCartItems() {
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
