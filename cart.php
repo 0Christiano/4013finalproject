@@ -30,6 +30,12 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 
             echo "<hr>";
         }
+        echo "<form method='post' action='checkout.php'>"; // Replace 'checkout.php' with the actual checkout page
+        echo "<input type='submit' name='proceed_to_checkout' value='Proceed to Checkout'>";
+        echo "</form>";
+    } else {
+        echo "<p>Your cart is empty.</p>";
+    }
     } else {
         echo "<p>Your cart is empty.</p>";
     }
