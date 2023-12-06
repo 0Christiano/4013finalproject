@@ -19,8 +19,11 @@
     }
     .nav-link {
       color: #555555; /* Change link text color */
+      transition: color 0.3s ease-in-out; /* Smooth transition */
     }
-    
+    .nav-link:hover {
+      color: #000000; /* Change link text color on hover */
+    }
     .nav-link.active {
       font-weight: bold; /* Make active link text bold */
       color: #000000; /* Change active link text color */
@@ -42,9 +45,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cart.php">Cart</a>
-            </li>
-               <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
             </li>
             <!-- Add more nav-items as needed -->
           </ul>
