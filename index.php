@@ -16,7 +16,7 @@ if ($items !== false && $items->num_rows > 0) {
             <a href='add-to-cart.php?item_id={$row['item_ID']}'>Add to Cart</a></p>";
         } else {
             echo "<p>Invalid data fetched from the database.</p>";
-            var_dump($row); // Output the fetched row for debugging purposes
+            var_dump($row); 
         }
     }
 } else {
