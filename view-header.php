@@ -29,7 +29,7 @@
     }
 
     .navbar-nav {
-      margin-left: auto;
+      margin-left: 0; /* Updated margin-left to 0 to move links to the left */
     }
 
     .nav-link {
