@@ -6,7 +6,7 @@ function saveQuote($id, $name, $address, $creditCard) {
     $conn = get_db_connection(); // Get the database connection
     
     if ($conn === false) {
-        return false; // Return false if the connection fails
+        return false; 
     }
 
     // escape the variables to avoid sql injection
