@@ -12,6 +12,7 @@ include('functions.php');
     <title>Shopping Cart</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
             padding-top: 60px; /* Adjust based on your navbar height */
@@ -35,8 +36,17 @@ include('functions.php');
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">CJ's MarketPlace</a>
+ 
+<ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="cart.php">
+                    <i class="fas fa-shopping-cart"></i> <!-- Cart Icon from Font Awesome -->
+                    Cart
+                </a>
+            </li>
+        </ul>
     </nav>
-
+    
     <div class="container">
 
         <?php
