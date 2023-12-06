@@ -1,68 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?=$pageTitle?></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f8f9fa; /* Light gray background color */
-      margin: 0; /* Remove default margin to fill the entire screen */
+<?php
+$pageTitle = "Home";
+include "view-header.php"; 
+include 'functions.php'; 
+
+// get items from the database
+$items = getItems();
+
+if ($items !== false && $items->num_rows > 0) {
+    echo "<div class='container'>";
+    echo "<h1 class='mt-5 mb-4'>Items</h1>";
+
+    while ($row = $items->fetch_assoc()) {
+        // check if the keys exist
+        if (isset($row['name'], $row['description'], $row['item_ID'])) {
+            // Bootstrap card structure
+            echo "<div class='card mb-3'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>{$row['name']}</h5>";
+            echo "<p class='card-text'>{$row['description']}</p>";
+            echo "<a href='add-to-cart.php?item_id={$row['item_ID']}' class='btn btn-primary'>Add to Cart</a>";
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "<div class='alert alert-danger' role='alert'>";
+            echo "Invalid data fetched from the database.";
+            echo "</div>";
+            var_dump($row);
+        }
     }
 
-    .container {
-      padding: 20px;
-    }
+    echo "</div>"; // Close the container
+} else {
+    echo "<div class='container'>";
+    echo "<p>No items found.</p>";
+    echo "</div>"; // Close the container
+}
 
-    .navbar {
-      background-color: #007bff; /* Bootstrap primary color */
-    }
-
-    .navbar-brand {
-      color: #fff; /* White text color for the brand */
-    }
-
-    .navbar-toggler-icon {
-      background-color: #fff; /* White color for the toggler icon */
-    }
-
-    .navbar-nav {
-      margin-left: 0; /* Updated margin-left to 0 to move links to the left */
-    }
-
-    .nav-link {
-      color: #fff; /* White text color for the links */
-      margin-right: 15px;
-    }
-
-    .nav-link.active {
-      font-weight: bold; /* Bold font for the active link */
-    }
-  </style>
-</head>
-<body>
-  <div class="container-fluid"> <!-- Use container-fluid for a full-width container -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">Your Brand</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.php">Cart</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Your homepage content goes here -->
-  </div>
-</body>
-</html>
+include "view-footer.php"; 
+?>
