@@ -56,8 +56,6 @@
     <nav>
         <!-- Add navigation links if needed -->
         <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
     </nav>
 
     <main>
