@@ -6,7 +6,7 @@ include('functions.php');
 if (isset($_GET['item_id']) && !empty($_GET['item_id'])) {
     $itemId = $_GET['item_id'];
 
-    // Retrieve item details from the database based on $itemId
+    // retrieve item details from the database based $itemId
     global $conn;
     $sql = "SELECT * FROM Item WHERE item_id = $itemId";
     $result = $conn->query($sql);
