@@ -1,10 +1,11 @@
 <?php
 $pageTitle = "Home";
-include "view-header.php"; 
-include 'functions.php'; 
+include "view-header.php";
+include 'functions.php';
 
-// get items from the database
-$items = getItems();
+// get items from the database with a LIMIT clause
+$limit = 10; // Adjust the limit based on your needs
+$items = getLimitedItems($limit);
 
 if ($items !== false && $items->num_rows > 0) {
     echo "<div class='container'>";
@@ -27,6 +28,9 @@ if ($items !== false && $items->num_rows > 0) {
             echo "</div>";
             var_dump($row);
         }
+
+        // Release the memory associated with the result set for the current row
+        $items->free_result();
     }
 
     echo "</div>"; // Close the container
@@ -36,5 +40,5 @@ if ($items !== false && $items->num_rows > 0) {
     echo "</div>"; // Close the container
 }
 
-include "view-footer.php"; 
+include "view-footer.php";
 ?>
