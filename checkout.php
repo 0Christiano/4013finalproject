@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
     $address = $_POST['address'];
     $creditCard = $_POST['credit_card'];
 
-    // Validate and sanitize user inputs (add your validation/sanitization logic here)
+  
 
     // concatenate user information into a single string
     $customerInfo = "ID: $id, Name: $name, Address: $address, Credit Card: $creditCard";
