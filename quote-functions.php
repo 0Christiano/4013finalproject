@@ -1,7 +1,7 @@
 <?php
-include_once('util-db.php'); // Include the file containing get_db_connection() function
+include_once('util-db.php'); 
 
-// Function to save user information into the Quote table
+//  save user information into the Quote table
 function saveQuote($id, $name, $address, $creditCard) {
     $conn = get_db_connection(); // Get the database connection
     
@@ -9,13 +9,13 @@ function saveQuote($id, $name, $address, $creditCard) {
         return false; // Return false if the connection fails
     }
 
-    // Escape the variables to prevent SQL injection
+    // escape the variables to avoid sql injection
     $safeId = mysqli_real_escape_string($conn, $id);
     $safeName = mysqli_real_escape_string($conn, $name);
     $safeAddress = mysqli_real_escape_string($conn, $address);
     $safeCreditCard = mysqli_real_escape_string($conn, $creditCard);
 
-    // SQL query to insert customer information into the Quote table
+    // insert customer information into the Quote table
     $sql = "INSERT INTO Quote (ID, name, address, credit_card) 
             VALUES ('$safeId', '$safeName', '$safeAddress', '$safeCreditCard')";
 
@@ -32,20 +32,20 @@ function saveQuoteItem($quoteId, $itemId) {
         return false; // Return false if the connection fails
     }
 
-    // Escape the variables to prevent SQL injection
+    // escape the variables to avoid sql injection
     $safeQuoteId = mysqli_real_escape_string($conn, $quoteId);
     $safeItemId = mysqli_real_escape_string($conn, $itemId);
 
-    // SQL query to insert cart items into the Quote_Item table
+    // insert cart items into the Quote_Item table
     $sql = "INSERT INTO Quote_Item (quote_id, item_id) 
             VALUES ('$safeQuoteId', '$safeItemId')";
 
-    return $conn->query($sql); // Return the result of the query (true or false)
+    return $conn->query($sql); // return the result
 }
 
 function clearCart() {
     if (isset($_SESSION['cart'])) {
-        unset($_SESSION['cart']); // Unset or clear the cart session variable
+        unset($_SESSION['cart']); 
     }
 }
 
@@ -53,8 +53,7 @@ function getCartItems() {
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         return []; // Return an empty array if cart is empty or not set
     } else {
-        return $_SESSION['cart']; // Return cart items from session
+        return $_SESSION['cart']; // return cart items 
     }
 }
-// Other functions related to the Quote table...
 ?>
