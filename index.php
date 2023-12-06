@@ -25,3 +25,4 @@ if ($items !== false && $items->num_rows > 0) {
 
 include "view-footer.php"; 
 ?>
+
