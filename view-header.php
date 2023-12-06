@@ -20,6 +20,10 @@
     .nav-link {
       color: #555555; /* Change link text color */
     }
+    .nav:hover {
+       background-color: #f0f0f0;
+    }
+    
     .nav-link.active {
       font-weight: bold; /* Make active link text bold */
       color: #000000; /* Change active link text color */
