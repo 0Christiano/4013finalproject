@@ -3,7 +3,7 @@ include_once('util-db.php');
 
 //  save user information into the Quote table
 function saveQuote($id, $name, $address, $creditCard) {
-    $conn = get_db_connection(); // Get the database connection
+    $conn = get_db_connection(); // get the db
     
     if ($conn === false) {
         return false; 
@@ -20,16 +20,16 @@ function saveQuote($id, $name, $address, $creditCard) {
             VALUES ('$safeId', '$safeName', '$safeAddress', '$safeCreditCard')";
 
     if ($conn->query($sql) === TRUE) {
-        return $conn->insert_id; // Return the generated Quote ID
+        return $conn->insert_id; // return generated Quote ID
     } else {
-        return false; // Return false if the insertion fails
+        return false; // return false if the insertion fails
     }
 }
 function saveQuoteItem($quoteId, $itemId) {
-    $conn = get_db_connection(); // Get the database connection
+    $conn = get_db_connection(); 
 
     if ($conn === false) {
-        return false; // Return false if the connection fails
+        return false; // return false if the connection fails
     }
 
     // escape the variables to avoid sql injection
@@ -51,7 +51,7 @@ function clearCart() {
 
 function getCartItems() {
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-        return []; // Return an empty array if cart is empty or not set
+        return []; // return empty array if cart is empty or not set
     } else {
         return $_SESSION['cart']; // return cart items 
     }
