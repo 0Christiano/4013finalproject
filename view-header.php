@@ -9,6 +9,13 @@
   <!-- Your Custom CSS -->
   <style>
     /* Customize your navbar here */
+      body {
+            background: linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3),
+                        linear-gradient(-45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3);
+            background-size: 20px 20px;
+            background-color: #f8f9fa; /* Fallback color */
+        }
+    
     .navbar {
       background-color: #ffffff; /* Change background color */
       box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a shadow */
