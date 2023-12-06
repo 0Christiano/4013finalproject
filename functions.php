@@ -1,10 +1,10 @@
 <?php
-include_once('util-db.php'); // Include the file containing get_db_connection() function
+include_once('util-db.php'); 
 
 // get items from the database
 if (!function_exists('getItems')) {
     function getItems() {
-        $conn = get_db_connection(); // Get the database connection
+        $conn = get_db_connection(); 
 
         if ($conn === false) {
             return false; 
@@ -29,7 +29,7 @@ if (!function_exists('getCartItems')) {
         if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
             return []; // Return an empty array if cart is empty or not set
         } else {
-            return $_SESSION['cart']; // Return cart items from session
+            return $_SESSION['cart']; // return cart items from session
         }
     }
 }
