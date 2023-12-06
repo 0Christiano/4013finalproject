@@ -65,6 +65,7 @@ include('functions.php');
                     echo "<div class='col-md-4'>";
                     echo "<div class='card cart-item'>";
                     echo "<div class='card-body'>";
+                     echo "<h5 class='card-title'>{$itemDetails['item_id']}</h5>";
                     echo "<h5 class='card-title'>{$itemDetails['name']}</h5>";
                     echo "<p class='card-text'>{$itemDetails['description']}</p>";
                     echo "<form method='post' action='cart.php'>";
