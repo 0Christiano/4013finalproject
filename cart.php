@@ -34,7 +34,7 @@ include('functions.php');
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.php">Your Company Name</a>
+        <a class="navbar-brand" href="index.php">CJ's MarketPlace</a>
     </nav>
 
     <div class="container">
