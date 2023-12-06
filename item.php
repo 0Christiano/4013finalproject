@@ -2,7 +2,7 @@
 session_start();
 include('functions.php');
 
-// Check if item_id is present in the URL
+// see if item_id is in the URL
 if (isset($_GET['item_id']) && !empty($_GET['item_id'])) {
     $itemId = $_GET['item_id'];
 
