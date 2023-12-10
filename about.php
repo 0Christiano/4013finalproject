@@ -60,14 +60,13 @@
 
     <main>
         <section>
-            <h2>Welcome to [Your Company Name]</h2>
-            <p>We are passionate about [brief description of what your company does]. At [Your Company Name], we strive
-                to...</p>
+            <h2>Welcome to CJ's MarketPlace</h2>
+            <p>Here at CJ's Market Place we are dedicated to providing a comprehensive and diverse selection of top-quality computer parts.</p>
         </section>
 
         <section>
             <h2>Our Mission</h2>
-            <p>Our mission is to [insert your mission statement or purpose here].</p>
+            <p> Our mission is to be the preferred destination for individuals and businesses seeking reliable and cutting-edge components for their computing needs.</p>
         </section>
 
         <section>
@@ -81,12 +80,12 @@
 
         <section>
             <h2>How to Contact Us</h2>
-            <p>For inquiries or more information, you can contact us at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+            <p>For inquiries or more information, you can contact us at <a href="jadenbrobinson@outlook.com">jadenbrobinson@outlook.com</a>.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 [Your Company Name]. All rights reserved.</p>
+        <p>&copy; 2023 CJ's MarketPlace. All rights reserved.</p>
     </footer>
 
 </body>
