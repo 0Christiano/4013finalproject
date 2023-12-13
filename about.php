@@ -55,7 +55,7 @@
 
     <nav>
         
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
     </nav>
 
     <main>
