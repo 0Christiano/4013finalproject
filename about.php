@@ -59,6 +59,8 @@
     </nav>
 
     <main>
+          <img src="https://im.hunt.in/cg/Chhatis/Korba/City-Guide/compute.jpg" alt="CJ's MarketPlace Image">
+
         <section>
             <h2>Welcome to CJ's MarketPlace</h2>
             <p>Here at CJ's Market Place we are dedicated to providing a comprehensive and diverse selection of top-quality computer parts.</p>
