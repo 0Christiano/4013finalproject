@@ -7,7 +7,7 @@ include 'functions.php';
 $items = getItems();
 
 if ($items !== false && $items->num_rows > 0) {
-    echo "<h1>Items</h1>";
+    echo "<h1>Home</h1>";
 
     while ($row = $items->fetch_assoc()) {
         // check if the keys exist
