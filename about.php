@@ -67,6 +67,7 @@
         <section>
             <h2>Our Mission</h2>
             <p> Our mission is to be the preferred destination for individuals and businesses seeking reliable and cutting-edge components for their computing needs.</p>
+            <p> The site is simple to use! Click what items you'd like to purchase, and when you checkout enter the Item ID's you wish to buy, along with your information! Thanks for shopping with us!.</p>
         </section>
 
         <section>
