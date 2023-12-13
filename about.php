@@ -43,6 +43,17 @@
             text-align: center;
             padding: 1em 0;
         }
+        
+        section {
+            margin-top: 2em;
+        }
+
+        img {
+            width: 100%;
+            height: auto; /* Maintain the aspect ratio */
+            display: block; /* Remove any default spacing below the image */
+            margin: 0 auto; /* Center the image */
+        }
     </style>
 </head>
 
