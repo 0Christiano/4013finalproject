@@ -54,8 +54,8 @@
     </header>
 
     <nav>
-        <!-- Add navigation links if needed -->
-        <a href="#home">Home</a>
+        
+        <a href="index.html">Home</a>
     </nav>
 
     <main>
