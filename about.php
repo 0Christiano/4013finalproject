@@ -71,7 +71,7 @@
 
         <section>
             <h2>How to Contact Us</h2>
-            <p>For inquiries or more information, you can contact us at <a href="jadenbrobinson@outlook.com">jadenbrobinson@outlook.com</a>.</p>
+            <p>For inquiries or more information, you can contact us at <a href="jadenbrobinson@outlook.com">jadenbrobinson@outlook.com</a>. <a href="Christian.S.Keener-1@ou.edu">Christian.S.Keener-1@ou.edu</a>.</p>
         </section>
     </main>
 
