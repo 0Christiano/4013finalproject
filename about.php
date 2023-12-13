@@ -70,15 +70,6 @@
         </section>
 
         <section>
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>Feature 1:</strong> [Description of Feature 1]</li>
-                <li><strong>Feature 2:</strong> [Description of Feature 2]</li>
-                <li><strong>Feature 3:</strong> [Description of Feature 3]</li>
-            </ul>
-        </section>
-
-        <section>
             <h2>How to Contact Us</h2>
             <p>For inquiries or more information, you can contact us at <a href="jadenbrobinson@outlook.com">jadenbrobinson@outlook.com</a>.</p>
         </section>
