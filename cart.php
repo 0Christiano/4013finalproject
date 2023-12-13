@@ -15,7 +15,13 @@ include('functions.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
+            body {
             padding-top: 60px; /* Adjust based on your navbar height */
+            background: linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3),
+                        linear-gradient(-45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3);
+            background-size: 20px 20px;
+            background-color: #f8f9fa; /* Fallback color */
+        }
         }
 
         .cart-item {
