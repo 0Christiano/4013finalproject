@@ -4,36 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$pageTitle?></title>
-  <!-- Bootstrap CSS -->
+ 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <!-- Your Custom CSS -->
+
   <style>
-    /* Customize your navbar here */
+
       body {
             background: linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3),
                         linear-gradient(-45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3);
             background-size: 20px 20px;
-            background-color: #f8f9fa; /* Fallback color */
+            background-color: #f8f9fa; 
         }
     
     .navbar {
-      background-color: #ffffff; /* Change background color */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a shadow */
+      background-color: #ffffff; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     }
     .navbar-brand {
-      font-weight: bold; /* Make the brand text bold */
-      color: #333333; /* Change brand text color */
+      font-weight: bold; 
+      color: #333333; 
     }
     .nav-link {
-      color: #555555; /* Change link text color */
-      transition: color 0.3s ease-in-out; /* Smooth transition */
+      color: #555555; 
+      transition: color 0.3s ease-in-out; 
     }
     .nav-link:hover {
-      color: #000000; /* Change link text color on hover */
+      color: #000000; 
     }
     .nav-link.active {
-      font-weight: bold; /* Make active link text bold */
-      color: #000000; /* Change active link text color */
+      font-weight: bold; 
+      color: #000000; 
     }
   </style>
 </head>
@@ -56,15 +56,12 @@
               <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
             </li>
-            <!-- Add more nav-items as needed -->
+         
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Your content goes here -->
-
-    <!-- Bootstrap JS (optional, for dropdowns and toggling functionality) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
 </body>
 </html>
