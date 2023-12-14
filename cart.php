@@ -10,12 +10,12 @@ include('functions.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <!-- Add Bootstrap CSS link -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
-            padding-top: 60px; /* Adjust based on your navbar height */
+            padding-top: 60px; 
         }
 
         .cart-item {
@@ -33,14 +33,14 @@ include('functions.php');
 
 <body>
 
-    <!-- Navigation Bar -->
+   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">CJ's MarketPlace</a>
  
 <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="cart.php">
-                    <i class="fas fa-shopping-cart"></i> <!-- Cart Icon from Font Awesome -->
+                    <i class="fas fa-shopping-cart"></i> 
                     Cart
                 </a>
             </li>
@@ -55,15 +55,15 @@ include('functions.php');
                 $itemId = $_POST['item_id'];
                 removeFromCart($itemId);
             } elseif (isset($_POST['proceed_to_checkout'])) {
-                // ... (your existing code for checkout)
+               
             }
         }
 
-        // Check if the cart is empty
+     
         if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
             echo "<p>Your cart is empty.</p>";
         } else {
-            // Get cart items
+           
             $cartItems = getCartItems();
 
             if (!empty($cartItems)) {
@@ -71,7 +71,7 @@ include('functions.php');
                 foreach ($cartItems as $itemID) {
                     $itemDetails = getItemDetails($itemID);
 
-                    // Display item details in cards
+                    
                     echo "<div class='col-md-4'>";
                     echo "<div class='card cart-item'>";
                     echo "<div class='card-body'>";
@@ -88,7 +88,7 @@ include('functions.php');
                 }
                 echo "</div>";
 
-                // Proceed to checkout button
+               
                 echo "<form class='checkout-form' method='post' action='checkout.php'>";
                 echo "<input type='submit' name='proceed_to_checkout' value='Proceed to Checkout' class='btn btn-primary'>";
                 echo "</form>";
@@ -102,7 +102,7 @@ include('functions.php');
 
     </div>
 
-    <!-- Add Bootstrap JS and Popper.js -->
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
