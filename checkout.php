@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
     $quoteId = saveQuote($id, $name, $address, $creditCard);
 
     if ($quoteId) {
-        // Get cart items
+      
         $cartItems = getCartItems();
 
         // save cart items to the Quote_Item table
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_checkout'])) {
 
         // clear cart after checkout 
         clearCart();
-
+        //index is hp
         //redirect to index(home)
         header('Location: index.php');
         exit();
